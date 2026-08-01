@@ -8,7 +8,7 @@ Escolha uma opção:
 
 2. Senha inválida
 
-3. Quilometragem
+3. Quilometragem/Horimetro Superior
 
 4. Cartão bloqueado
 

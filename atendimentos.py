@@ -11,6 +11,46 @@ Informe:
 * Foto da tela (se possível).
 """)
 
+def coletar_informacoes():
+
+    placa = input("Digite a placa do cavalo: ")
+
+    posto = input("Digite o nome do posto: ")
+
+    mensagem = input("Digite a mensagem apresentada: ")
+
+    foto = input("Encaminhe a foto (se houver): ")
+
+    return {
+        "placa": placa,
+        "posto": posto,
+        "mensagem": mensagem,
+        "foto": foto
+    }
+
+
+def resumo_chamado(problema, informacoes):
+    print(f"""
+    Chamado recebido:
+
+    Problema:
+    {problema}
+
+    Placa do cavalo: 
+    {informacoes['placa']}
+
+    Nome do posto:
+    {informacoes['posto']}
+
+    Mensagem apresentada:
+    {informacoes['mensagem']}
+
+    Foto:
+    {informacoes['foto']}
+
+    Status:
+    Em análise.
+""")
 
 def enviar_lista_postos():
     print("""

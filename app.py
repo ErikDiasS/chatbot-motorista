@@ -1,12 +1,12 @@
 #importa menu e formulario
 from menus import mostrar_menu
-from atendimentos import enviar_formulario, enviar_lista_postos, confirmar_recebimento, perguntar_continuar
+from atendimentos import enviar_formulario, enviar_lista_postos, confirmar_recebimento, perguntar_continuar, coletar_informacoes, resumo_chamado
 
 
 problemas = {
     "1": "Abastecimento não autorizado",
     "2": "Senha inválida",
-    "3": "Quilometragem",
+    "3": "Quilometragem/Horimetro Superior",
     "4": "Cartão bloqueado",
     "5": "Saldo insuficiente",
     "6": "Problema no posto",
@@ -30,7 +30,9 @@ Problema selecionado:
 
         enviar_formulario()
 
-        informacoes_motorista = input("Aguardando informações: ")
+        informacoes_motorista = coletar_informacoes()
+
+        resumo_chamado(problemas[opcao], informacoes_motorista)
 
         confirmar_recebimento()
 
