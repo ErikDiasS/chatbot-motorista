@@ -1,6 +1,6 @@
 def mostrar_menu():
     print(""" 
-    Olá! Sou o assistente virtual do abasteciemento Transzilli.
+    Olá! Sou o assistente virtual do abastecimento Transzilli.
 
 Escolha uma opção:
 
@@ -16,5 +16,6 @@ Escolha uma opção:
 
 6. Problema no posto
 
-7. Falar com atendente humano
+7. Lista de postos credenciados
+
 """)
