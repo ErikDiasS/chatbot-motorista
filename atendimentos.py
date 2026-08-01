@@ -76,8 +76,8 @@ def perguntar_continuar():
     print("""
 Deseja mais alguma coisa? 
 
-Digite:
-SIM
-NÃO
-ATENDIMENTO
+Digite o numero correspondente à sua resposta:
+1: SIM
+2: NÃO
+3: ATENDIMENTO
 """)

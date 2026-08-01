@@ -47,16 +47,17 @@ Problema selecionado:
 
          resposta = input('Digite sua resposta: ')
 
-         if resposta.lower() == "sim":
+         if resposta.lower() == "1":
             continue
 
-         elif resposta.lower() == "não":
+         elif resposta.lower() == "2":
             print("Atendimento encerrado.")
             break
 
-         elif resposta.lower() == "atendimento":
+         elif resposta.lower() == "3":
             print("Encaminhando para um analista.")
             break
 
 else:
     print("Opção inválida.")
+    
