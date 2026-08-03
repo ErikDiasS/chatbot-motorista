@@ -1,3 +1,5 @@
+import json
+
 def enviar_formulario():
     print("""
 Informe:
@@ -81,3 +83,24 @@ Digite o numero correspondente à sua resposta:
 2: NÃO
 3: ATENDIMENTO
 """)
+
+def salvar_chamado(problema, informacoes):
+    with open("chamados.json", "r", encoding ="utf-8") as arquivo:
+        chamados = json.load(arquivo)
+
+    chamado = {
+        "problema": problema,
+        "placa": informacoes["placa"],
+        "posto": informacoes["posto"],
+        "mensagem": informacoes["mensagem"],
+        "foto": informacoes["foto"],
+        "status": "Em análise"
+
+    }
+
+    chamados.append(chamado)
+
+    with open("chamados.json", "w", encoding="utf-8") as arquivo:
+        json.dump(chamados,arquivo, indent=4, ensure_ascii=False)
+        
+    

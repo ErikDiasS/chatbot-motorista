@@ -4,7 +4,7 @@ def mostrar_menu():
 
 Escolha uma opção:
 
-1. Abastecimento não autorizado
+1. Abastecimento ncleRão autorizado
 
 2. Senha inválida
 

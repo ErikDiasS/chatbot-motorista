@@ -1,6 +1,6 @@
 #importa menu e formulario
 from menus import mostrar_menu
-from atendimentos import enviar_formulario, enviar_lista_postos, confirmar_recebimento, perguntar_continuar, coletar_informacoes, resumo_chamado
+from atendimentos import enviar_formulario, enviar_lista_postos, confirmar_recebimento, perguntar_continuar, coletar_informacoes, resumo_chamado, salvar_chamado
 
 
 problemas = {
@@ -31,6 +31,8 @@ Problema selecionado:
         enviar_formulario()
 
         informacoes_motorista = coletar_informacoes()
+
+        salvar_chamado(problemas[opcao], informacoes_motorista)
 
         resumo_chamado(problemas[opcao], informacoes_motorista)
 
