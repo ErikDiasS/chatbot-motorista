@@ -1,8 +1,8 @@
 #importa menu e formulario
 from menus import mostrar_menu
-from atendimentos import enviar_formulario, enviar_lista_postos, confirmar_recebimento, perguntar_continuar, coletar_informacoes, resumo_chamado, salvar_chamado
+from atendimentos import enviar_formulario, enviar_lista_postos, confirmar_recebimento, perguntar_continuar, coletar_informacoes, resumo_chamado, salvar_chamado, consultar_chamados
 
-
+#apresentação do menu e coleta de informações do motorista
 problemas = {
     "1": "Abastecimento não autorizado",
     "2": "Senha inválida",
@@ -40,7 +40,7 @@ Problema selecionado:
 
         break
 
-
+#envia a lista de postos credenciados e pergunta se deseja continuar ou encerrar o atendimento
     elif opcao == "7":
     
          enviar_lista_postos()
@@ -59,6 +59,14 @@ Problema selecionado:
          elif resposta.lower() == "3":
             print("Encaminhando para um analista.")
             break
+#da a opção de consultar chamados já realizados, caso o motorista queira verificar o status do seu chamado
+    elif opcao == "8":
+
+        consultar_chamados()
+
+        input("\nPressione Enter para voltar ao menu.")
+
+        continue
 
 else:
     print("Opção inválida.")
