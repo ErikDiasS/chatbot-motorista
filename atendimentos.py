@@ -5,48 +5,51 @@ def enviar_formulario():
     print("""
 Informe:
 
-* Placa Cavalo:
+* Placa Cavalo/ THK:
 
 * Nome do posto:
 
-* Mensagem apresentada:
+* KM/Horímetro:
 
 * Foto da tela (se possível).
 """)
 #coloca as informações coletadas do motorista em um dicionário e retorna para o app.py
 def coletar_informacoes():
 
-    placa = input("Digite a placa do cavalo: ")
+    placa = input("Digite a placa do cavalo/THK: ")
 
     posto = input("Digite o nome do posto: ")
 
-    mensagem = input("Digite a mensagem apresentada: ")
+    km_horimetro = input("Digite o KM/Horímetro: ")
 
     foto = input("Encaminhe a foto (se houver): ")
 
     return {
         "placa": placa,
         "posto": posto,
-        "mensagem": mensagem,
+        "km_horimetro": km_horimetro,
         "foto": foto
     }
 
 #devolve as informações do chamado para o motorista, mostrando um resumo do que foi coletado e o status do chamado
-def resumo_chamado(problema, informacoes):
+def resumo_chamado(id_chamado, problema, informacoes):
     print(f"""
     Chamado recebido:
+
+    numero do chamado:
+    {id_chamado}
 
     Problema:
     {problema}
 
-    Placa do cavalo: 
+    Placa do cavalo/THK: 
     {informacoes['placa']}
 
     Nome do posto:
     {informacoes['posto']}
 
-    Mensagem apresentada:
-    {informacoes['mensagem']}
+    KM/Horímetro:
+    {informacoes['km_horimetro']}
 
     Foto:
     {informacoes['foto']}
@@ -89,11 +92,15 @@ def salvar_chamado(problema, informacoes):
     with open("chamados.json", "r", encoding ="utf-8") as arquivo:
         chamados = json.load(arquivo)
 
+    proximo_numero = len(chamados) + 1
+    id_chamado = f"CH-{proximo_numero:04d}"
+
     chamado = {
+        "id": id_chamado,
         "problema": problema,
         "placa": informacoes["placa"],
         "posto": informacoes["posto"],
-        "mensagem": informacoes["mensagem"],
+        "km_horimetro": informacoes["km_horimetro"],
         "foto": informacoes["foto"],
         "status": "Em análise"
 
@@ -103,6 +110,9 @@ def salvar_chamado(problema, informacoes):
 
     with open("chamados.json", "w", encoding="utf-8") as arquivo:
         json.dump(chamados,arquivo, indent=4, ensure_ascii=False)
+
+    return id_chamado
+
 
 #enviar uma lista de chamados já realizados, caso o motorista queira verificar o status do seu chamado, com a opção de digitar a placa do cavalo e mostrar todos os chamados relacionados a essa placa
 def consultar_chamados():
@@ -132,6 +142,9 @@ Foram encontrados {len(encontrados)} chamado(s)
         print(f"""
 Chamado {numero}
 ----------------------------------------
+Número do chamado:
+{chamado["id"]}
+
 Problema:
 {chamado["problema"]}
 
@@ -141,8 +154,8 @@ Placa:
 Posto:
 {chamado["posto"]}
 
-Mensagem:
-{chamado["mensagem"]}
+KM/Horímetro:
+{chamado["km_horimetro"]}
 
 Foto:
 {chamado["foto"]}

@@ -30,5 +30,72 @@
         "mensagem": "teste",
         "foto": "noa ",
         "status": "Em análise"
+    },
+    {
+        "problema": "Quilometragem/Horimetro Superior",
+        "placa": "PRY1E63 THK3218",
+        "posto": "FLORINAO",
+        "km_horimetro": " 15488",
+        "foto": "NAO",
+        "status": "Em análise"
+    },
+    {
+        "problema": "Quilometragem/Horimetro Superior",
+        "placa": "PRY1E63",
+        "posto": "FLORIANO",
+        "km_horimetro": "00000",
+        "foto": "NAO",
+        "status": "Em análise"
+    },
+    {
+        "problema": "Cartão bloqueado",
+        "placa": "teste ",
+        "posto": "ipiranga",
+        "km_horimetro": "0000",
+        "foto": "nao",
+        "status": "Em análise"
+    },
+    {
+        "problema": "Cartão bloqueado",
+        "placa": "PRY1E63",
+        "posto": "FLORIANO",
+        "km_horimetro": "0000",
+        "foto": "NÃO",
+        "status": "Em análise"
+    },
+    {
+        "problema": "Saldo insuficiente",
+        "placa": "PQE0A02",
+        "posto": "FLORIANO",
+        "km_horimetro": "0000",
+        "foto": "NÃO",
+        "status": "Em análise"
+    },
+    {
+        "id": "CH-0010",
+        "problema": "Cartão bloqueado",
+        "placa": "TESTE",
+        "posto": "TESTE",
+        "km_horimetro": "TESTE",
+        "foto": "0000000",
+        "status": "Em análise"
+    },
+    {
+        "id": "CH-0011",
+        "problema": "Saldo insuficiente",
+        "placa": "123ABC",
+        "posto": "FLOFLO",
+        "km_horimetro": "000",
+        "foto": "NAO",
+        "status": "Em análise"
+    },
+    {
+        "id": "CH-0012",
+        "problema": "Cartão bloqueado",
+        "placa": "ACB123",
+        "posto": "FLO",
+        "km_horimetro": "000",
+        "foto": "NAO",
+        "status": "Em análise"
     }
 ]

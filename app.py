@@ -32,12 +32,18 @@ Problema selecionado:
 
         informacoes_motorista = coletar_informacoes()
 
-        salvar_chamado(problemas[opcao], informacoes_motorista)
+        id_chamado = salvar_chamado(
+            problemas[opcao],
+            informacoes_motorista
+)
 
-        resumo_chamado(problemas[opcao], informacoes_motorista)
+        resumo_chamado(
+            id_chamado,
+            problemas[opcao],
+            informacoes_motorista
+)
 
         confirmar_recebimento()
-
         break
 
 #envia a lista de postos credenciados e pergunta se deseja continuar ou encerrar o atendimento
@@ -57,7 +63,7 @@ Problema selecionado:
             break
 
          elif resposta.lower() == "3":
-            print("Encaminhando para um analista.")
+            print("Encaminhando para um analista... Aguarde um momento.")
             break
 #da a opção de consultar chamados já realizados, caso o motorista queira verificar o status do seu chamado
     elif opcao == "8":
